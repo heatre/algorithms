@@ -6,5 +6,5 @@ package com.swin.utils;
  */
 public class Constant {
     public static final String CURRENT_DIR = System.getProperty("user.dir");
-    public static final String DATA_DIR = CURRENT_DIR+"\\data\\data\\";
+    public static final String DATA_DIR = CURRENT_DIR+"/Algorithms/data/";
 }
