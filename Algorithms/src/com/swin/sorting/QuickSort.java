@@ -20,10 +20,19 @@ public class QuickSort {
         sort(a, 0, a.length - 1);
     }
 
+    //递归实现快速排序
+    private static void sort(Comparable[] a, int lo, int hi) {
+        if (hi <= lo)
+            return;
+        int j = partition(a, lo, hi);
+        sort(a, lo, j - 1);
+        sort(a, j + 1, hi);
+    }
+
     //快速排序的切分,将数组切分为a[lo..i-1],a[i],a[i+1..hi]
     private static int partition(Comparable[] a, int lo, int hi) {
-        int i = lo;
-        int j = hi + 1;
+        int i = lo;//左分区索引
+        int j = hi + 1;//右分区索引
         //选择第一个元素作为切分元素
         Comparable v = a[lo];
         while (true) {
@@ -36,24 +45,18 @@ public class QuickSort {
             if (i >= j)//指针相遇
                 break;
             StdOut.println("a[i]:" + a[i] + " " + "a[j]:" + a[j]);
-            //交换a[i],a[j]保证i左侧值不大于v，j右侧的值不小于v,此时a[j]<v&& a[i]>v，可保证a[i]<v,a[j]>v,即最终保证
+            //交换a[i],a[j]保证i左侧值不大于v，j右侧的值不小于v,此时a[j]<v&& a[i]>v，
+            // 可保证a[i]<v,a[j]>v,即最终保证
             //切分点v左右两边有序，
             exch(a, i, j);
             show(a);
         }
+        show(a);
         //当i==j时，指针相遇交换a[lo],a[j]切分结束，(切分值保留在a[j]当中)
         exch(a, lo, j);
         return j;
     }
 
-    //递归实现快速排序
-    private static void sort(Comparable[] a, int lo, int hi) {
-        if (hi < lo)
-            return;
-        int j = partition(a, lo, hi);
-        sort(a, lo, j - 1);
-        sort(a, j + 1, hi);
-    }
 
     //比较v、w的大小，如果v小于w，返回true
     private static boolean less(Comparable v, Comparable w) {

@@ -9,6 +9,8 @@ import edu.princeton.cs.algs4.Stopwatch;
  * 直到所有的元素插入完为止，得到一个新的有序序列
  * 算法性能：对于随机排列长度为N且主键不重复的数组，平均情况下需要~N^2/4次对比，~N^2/4次交换。
  * 最坏情况下需要~N^2/2次比较，~N^2/2次交换，最好情况下需要N-1次比较和0次交换
+ * 时间复杂度：最差、平均都是O(N^2),最好O(N)
+ * 空间复杂度：1
  * Created by Swin on 2016/12/22.
  */
 public class InsertionSorting {

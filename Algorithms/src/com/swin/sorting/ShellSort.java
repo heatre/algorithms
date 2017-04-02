@@ -7,6 +7,8 @@ import edu.princeton.cs.algs4.Stopwatch;
 /**希尔排序(Shell Sort)：让数组中间隔为h的元素有序。这样的数组称为h数组。
  * shell sort是插入排序的一种改进，常用的希尔排序会使用(3^k-1)/2递增序列来去h值，从N/3递减到1
  * 算法性能：运行时间达不到平方级别
+ * 时间复杂度：平均O(NlogN)
+ * 空间复杂度：1
  * Created by Swin on 2016/12/22.
  */
 public class ShellSort {

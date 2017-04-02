@@ -9,6 +9,8 @@ import edu.princeton.cs.algs4.Stopwatch;
  * 自顶向下归并排序：递归调用将两个子数组排序，在将两个子数组归并成一个数组，从而将整个数组排序
  * 算法性能：长度为N的任意数组，需要1/2NlgN~NlgN次比较，最多6NlgN次数组访问
  * 性能提升：1.小规模子数组使用插入排序 2.测试数组是否已经有序(a[mid]<a[mid+1]) 3.不将元素复制到辅助数组
+ * 时间复杂度：最好、最坏、平均都是O(NlogN)
+ * 空间复杂度：O(N)
  * Created by Swin on 2016/12/22.
  */
 public class TopDownMergeSort {
@@ -18,11 +20,11 @@ public class TopDownMergeSort {
 
     //原地归并抽象方法,将a[lo..mid]和a[mid..hi]归并
     public static void merge(Comparable[] a, int lo, int mid, int hi) {
-        int i = lo;
-        int j = mid + 1;
+        int i = lo;//左子数组索引,表示有序的左子数组最小值
+        int j = mid + 1;//右子数组索引，表示有序右子数组最小值
         //将需要归并的两个数组复制到辅助数组；
         for (int k = lo; k <= hi; k++)
-            ax[k] = a[k];
+            ax[k] = a[k];//a[lo...hi]左右子数组归并后的大小,辅助数组
         //归并两个子数组
         for (int k = lo; k <= hi; k++) {
             if (i > mid)//i>mid表示左边子数组归并完成,直接复制右边子数组剩余的元素到a
@@ -34,6 +36,8 @@ public class TopDownMergeSort {
                 a[k] = ax[j++];
             else//对比左右子数组当前位置的最小值，左子数组当前索引元素较小取当前值，索引后移
                 a[k] = ax[i++];
+            show(ax);
+            show(a);
         }
     }
 

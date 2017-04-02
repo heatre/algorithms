@@ -14,5 +14,8 @@ public class Test {
         for (String s:a) {
             StdOut.print(s+" ");
         }
+        int[] b = new int[]{3,4,5};
+        int i = 1;
+        System.out.println(b[--i]);
     }
 }

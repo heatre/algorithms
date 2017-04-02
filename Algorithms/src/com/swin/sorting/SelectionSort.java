@@ -9,6 +9,8 @@ import edu.princeton.cs.algs4.Stopwatch;
  * 3.在剩下的元素当中找到最小元素，与数组中第二个元素交换位置
  * 4.重复步骤3知道数组有序
  * 算法性能：对于长度为N的数组，选择排序需要~N^2/2次比较和N次交换
+ * 时间复杂度：最差、平均都是O(N^2)
+ * 空间复杂度：1
  * Created by Swin on 2016/12/21.
  */
 public class SelectionSort {
