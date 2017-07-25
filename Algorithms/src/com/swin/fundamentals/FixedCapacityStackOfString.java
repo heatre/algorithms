@@ -17,6 +17,7 @@ public class FixedCapacityStackOfString {
     public FixedCapacityStackOfString(int cap) {
         a = new String[cap];
         this.cap = cap;
+        this.N = 0;
     }
 
     public boolean isEmpty() {

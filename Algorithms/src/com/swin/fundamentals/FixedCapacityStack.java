@@ -12,7 +12,7 @@ import edu.princeton.cs.algs4.StdOut;
 public class FixedCapacityStack<Item> {
     private Item[] items;
     private int cap;//栈的容量
-    private int size;//栈内元素个数
+    private int N;//栈内元素个数
 
     public FixedCapacityStack(int cap) {
         items = (Item[]) new Object[cap];
@@ -20,36 +20,36 @@ public class FixedCapacityStack<Item> {
     }
 
     public boolean isEmpty() {
-        return size == 0;
+        return N == 0;
     }
 
     public boolean isCapacity() {
-        return cap == size;
+        return cap == N;
     }
 
     public int size() {
-        return size;
+        return N;
     }
 
     public void resize(int max){
         Item[] items = (Item[])  new Object[max];
-        for(int i = 0; i< size; ++i){
+        for(int i = 0; i< N; ++i){
             items[i] = this.items[i];
         }
         this.items = items;
     }
 
     public void push(Item s) {
-        if(size == items.length)
+        if(N == items.length)
             resize(items.length*2);
-        items[size++] = s;
+        items[N++] = s;
     }
 
     public Item pop() {
-        if (size == 0)
+        if (N == 0)
             return null;
-        Item item = items[--size];
-        items[size] = null;//避免对象游离
+        Item item = items[--N];
+        items[N] = null;//避免对象游离
         return item;
     }
 

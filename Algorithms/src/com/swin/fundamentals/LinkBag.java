@@ -51,13 +51,13 @@ public class LinkBag<Item> implements Iterable<Item> {
 
         @Override
         public boolean hasNext() {
-            return first != null;
+            return current != null;
         }
 
         @Override
         public Item next() {
-            Item item = first.item;
-            first = first.next;
+            Item item = current.item;
+            current = current.next;
             return item;
         }
     }

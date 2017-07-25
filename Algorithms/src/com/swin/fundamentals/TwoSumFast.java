@@ -1,9 +1,7 @@
 package com.swin.fundamentals;
 
 
-import com.swin.utils.Constant;
 import com.swin.utils.Utils;
-import edu.princeton.cs.algs4.StdIn;
 import edu.princeton.cs.algs4.StdOut;
 import edu.princeton.cs.algs4.Stopwatch;
 
@@ -38,7 +36,7 @@ public class TwoSumFast {
         for (int i = 0; i < a.length; i++)
             for (int j = 0; j < a.length; j++) {
                 if (a[i] + a[j] == 0) {
-                    StdOut.println("a[i]:" + a[i]);
+//                    StdOut.println("a[i]:" + a[i]);
                     cnt++;
                 }
             }

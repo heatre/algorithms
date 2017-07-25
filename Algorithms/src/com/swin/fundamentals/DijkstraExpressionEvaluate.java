@@ -41,7 +41,7 @@ public class DijkstraExpressionEvaluate {
     }
 
     public static void main(String[] args) {
-        String s = "(1+((2+3)*(4/5)))";
+        String s = "(1+((2+3)*(4*5)))";
         DijkstraExpressionEvaluate dee = new DijkstraExpressionEvaluate();
         double val = dee.evaluate(s);
         StdOut.println("val:"+val);

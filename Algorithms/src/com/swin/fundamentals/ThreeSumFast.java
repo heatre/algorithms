@@ -21,13 +21,15 @@ public class ThreeSumFast {
         int n = a.length;
         Arrays.sort(a);
         for (int i = 0; i < n; i++)
-            for (int j = 0; j < n; j++) {
+            for (int j = i+1; j < n; j++) {
                 if (Arrays.binarySearch(a, -(a[i] + a[j])) > j) {
                     cnt++;
-//                    StdOut.println("a[i]:" + a[i]);
-//                    StdOut.println("a[j]:" + a[j]);
+                    StdOut.println("cnt:"+cnt);
+                    StdOut.println("a[i]:" + a[i]+" i:"+i);
+                    StdOut.println("a[j]:" + a[j]+" j:"+j);
                 }
             }
+
         return cnt;
     }
 
@@ -48,7 +50,7 @@ public class ThreeSumFast {
     }
 
     public static void main(String[] args) {
-        int[] a = Utils.getIntArray("8Kints.txt");
+        int[] a = Utils.getIntArray("1Kints.txt");
 
         ThreeSumFast tsf = new ThreeSumFast();
 
@@ -57,9 +59,9 @@ public class ThreeSumFast {
         StdOut.println("time:" + t.elapsedTime());
         StdOut.println("cnt:" + cnt);
 
-        Stopwatch t2 = new Stopwatch();
-        int cnt2 = tsf.count2(a);
-        StdOut.println("time:" + t2.elapsedTime());
-        StdOut.println("cnt2:" + cnt2);
+//        Stopwatch t2 = new Stopwatch();
+//        int cnt2 = tsf.count2(a);
+//        StdOut.println("time:" + t2.elapsedTime());
+//        StdOut.println("cnt2:" + cnt2);
     }
 }
