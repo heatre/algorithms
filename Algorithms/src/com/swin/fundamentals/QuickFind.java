@@ -7,7 +7,7 @@ import edu.princeton.cs.algs4.StdOut;
 
 /**
  * Dynamic Connectivity(动态连通性问题)
- * 网络术语:将对象称为触点，将整数称为连接，讲等价类称为连通分量简称为分量
+ * 网络术语:将对象称为触点，将整数称为连接，将等价类称为连通分量简称为分量
  *(N+3)(N-1)~N^2次数组访问，quick-find算法是平方级别
  * Created by Swin on 2016/12/1.
  */

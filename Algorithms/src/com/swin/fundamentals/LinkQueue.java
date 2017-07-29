@@ -11,7 +11,7 @@ import java.util.Iterator;
  * Created by Swin on 2016/10/24.
  */
 public class LinkQueue<Item> implements Iterable<Item> {
-    private int size ;//队列中元素数量
+    private int N;//队列中元素数量
     private Node first;//最早添加元素
     private Node last;//最近添加元素
 
@@ -21,7 +21,7 @@ public class LinkQueue<Item> implements Iterable<Item> {
     }
 
     public LinkQueue(){
-        this.size = 0;
+        this.N = 0;
         this.first = null;
         this.last = null;
     }
@@ -31,7 +31,7 @@ public class LinkQueue<Item> implements Iterable<Item> {
     }
 
     public int size(){
-        return size;
+        return N;
     }
 
     public void enqueue(Item item) {
@@ -43,16 +43,18 @@ public class LinkQueue<Item> implements Iterable<Item> {
             first = last;
         else {
             old.next = last;
-            size++;
+            N++;
         }
     }
 
     public Item dequeue(){
+        if(isEmpty()){
+            last = first;
+            return null;
+        }
         Item item = first.item;//表头删除元素
         first = first.next;
-        if(isEmpty())
-            last = null;
-        size--;
+        N--;
         return item;
     }
 
@@ -80,6 +82,7 @@ public class LinkQueue<Item> implements Iterable<Item> {
         String fn = Constant.DATA_DIR + "tobe.txt";
         StdIn.setScanner(Utils.getScanner(fn));
         LinkQueue<String> fs = new LinkQueue<>();
+        fs.dequeue();
         while (!StdIn.isEmpty()) {
             String s = StdIn.readString();
             if (!s.equals("-")) {

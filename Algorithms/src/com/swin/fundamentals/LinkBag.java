@@ -17,11 +17,11 @@ public class LinkBag<Item> implements Iterable<Item> {
         Node next;
     }
 
-    private int size;
+    private int N;
     private Node first;
 
     public LinkBag() {
-        this.size = 0;
+        this.N = 0;
         this.first = null;
     }
 
@@ -30,7 +30,7 @@ public class LinkBag<Item> implements Iterable<Item> {
     }
 
     public int size() {
-        return size;
+        return N;
     }
 
     public void add(Item item) {
@@ -38,7 +38,7 @@ public class LinkBag<Item> implements Iterable<Item> {
         first = new Node();
         first.item = item;
         first.next = old;
-        size++;
+        N++;
     }
 
     @Override
