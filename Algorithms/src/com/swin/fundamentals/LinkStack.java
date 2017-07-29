@@ -13,7 +13,7 @@ import java.util.Iterator;
  */
 public class LinkStack<Item> implements Iterable<Item> {
     private Node first;//栈顶元素
-    private int size;//栈内元素个数
+    private int N;//栈内元素个数
 
     //节点数据结构
     private class Node {
@@ -23,7 +23,7 @@ public class LinkStack<Item> implements Iterable<Item> {
 
     public LinkStack() {
         first = null;
-        size = 0;
+        N = 0;
     }
 
     public boolean isEmpty() {
@@ -31,7 +31,7 @@ public class LinkStack<Item> implements Iterable<Item> {
     }
 
     public int size() {
-        return size;
+        return N;
     }
 
     public void push(Item item) {
@@ -41,13 +41,15 @@ public class LinkStack<Item> implements Iterable<Item> {
 
         first = node;
         first.next = oldNode;
-        size++;
+        N++;
     }
 
     public Item pop() {
+        if(isEmpty())
+            return null;
         Item item = first.item;
         first = first.next;
-        size--;
+        N--;
         return item;
     }
 
