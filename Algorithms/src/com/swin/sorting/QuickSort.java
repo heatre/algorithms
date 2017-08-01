@@ -7,9 +7,11 @@ import edu.princeton.cs.algs4.Stopwatch;
 
 /**
  * 快速排序(quick sort)：快速排序是一种分治的排序算法。它将一个数组分成两个子数组，将两部分独立的排序。
- * 算法性能：长度为N的无重复元素的数组，快速排序平均需要~NlnN次比较和N/6的交换,最多需要~N^2/2次比较，
+ * 算法性能：长度为N的无重复元素的数组，快速排序平均需要~NlgN次比较和N/6的交换,最多需要~N^2/2次比较，
  * 但随机打乱数组可预防这种状况
  * 改进：1.切换到插入排序 2.三取样切分 3.熵最优的排序
+ * 时间复杂度：平均时间O(NlgN)
+ * 空间复杂度：O(N)
  * Created by Swin on 2016/12/27.
  */
 public class QuickSort {
@@ -36,7 +38,7 @@ public class QuickSort {
         //选择第一个元素作为切分元素
         Comparable v = a[lo];
         while (true) {
-            while (less(a[++i], v))//从左向右扫描，a[i]<v时,i增大,保证i左侧的比v小，当
+            while (less(a[++i], v))//从左向右扫描，a[i]<v时,i增大,保证i左侧的比v小，
                 if (i == hi)//向右扫描到尾部时结束
                     break;
             while (less(v, a[--j]))//从右向左扫描，v>a[j]时，j减少，保证j右侧的比v大

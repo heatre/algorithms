@@ -79,6 +79,7 @@ public class WeightedQuickUnion {
             wqu.union(p,q);
             StdOut.println(p+" "+q);
         }
+        StdOut.println("count:"+wqu.count());
     }
 
 }

@@ -22,8 +22,12 @@ public class InsertionSorting {
         for (int i = 1; i < n; ++i) {
             //对于1到n-1中的每一个i，将a[i]与a[0]到a[i-1]的比它小的元素所有元素依次有序的交换。
             //在索引i从左到右变化过程中，i左侧的元素总是有序的，当i到达数组的右端时排序完成
-            for (int j = i; j > 0 && less(a[j], a[j - 1]); j--)
+            for (int j = i; j > 0 && less(a[j], a[j - 1]); j--) {
+                StdOut.println("i:"+i+" j:"+j);
+                show(a);
                 exch(a, j, j - 1);
+                show(a);
+            }
         }
     }
 

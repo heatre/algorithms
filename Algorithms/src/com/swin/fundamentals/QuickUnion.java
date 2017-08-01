@@ -35,16 +35,22 @@ public class QuickUnion {
         return find(p) == find(q);
     }
 
-    private int find(int p){
+    private int find(int v){
         //找出分量名称
-        while (p!=id[p])
-            p = id[p];
-        return p;
+        while (v!=id[v]){
+            StdOut.println("v:"+v+" id[v]:"+id[v]);
+            v = id[v];
+            StdOut.println("v:"+v+" id[v]:"+id[v]);
+        }
+        return v;
     }
 
     public void union(int p,int q){
+        StdOut.println(p+" "+q);
         int pRoot = find(p);
+        StdOut.println("pRoot:"+pRoot);
         int qRoot = find(q);
+        StdOut.println("qRoot:"+qRoot);
         if(pRoot==qRoot)
             return;
         //将p所对应的根节点分量连接到q所对应的分量
@@ -63,7 +69,7 @@ public class QuickUnion {
             if(qu.connected(p,q))
                 continue;
             qu.union(p,q);
-            StdOut.println(p+" "+q);
         }
+        StdOut.println("count:"+qu.count());
     }
 }

@@ -6,7 +6,7 @@ import edu.princeton.cs.algs4.StdRandom;
 import edu.princeton.cs.algs4.Stopwatch;
 
 /**
- * 三切分快速排序(quick sort with 3-way partitioning):从左至右便利数组一次，维护一个指针lt使得
+ * 三切分快速排序(quick sort with 3-way partitioning):从左至右修复数组一次，维护一个指针lt使得
  * a[lo..lt-1]中的元素都小于v，一个指针gt使得a[gt+1..hi]中的元素都大于v,一个指针i使得a[lt..i-1]
  * 中的元素等于v，a[i..gt]中的元素未确定。
  * 算法性能：三切分的快速排序的运行时间和输入信息量的N倍成正比
@@ -31,11 +31,10 @@ public class Quick3WaySort {
         Comparable v = a[lo];
         //遍历使a[lo..lt-1]<v=a[lt..gt]<a[gt+1..hi]
         while (i <= gt) {
-            int cmp = a[i].compareTo(v);
-            if (cmp < 0)
-                exch(a, lt++, i++);
-            else if (cmp > 0)
-                exch(a, i, gt--);
+            if(less(a[i],v))
+                exch(a,lt++,i++);
+            else if(less(v,a[i]))
+                exch(a,gt--,i);
             else
                 i++;
             show(a);

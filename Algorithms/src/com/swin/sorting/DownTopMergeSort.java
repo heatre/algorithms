@@ -26,7 +26,6 @@ public class DownTopMergeSort {
                 a[k] = ax[j++];
             else if (j > hi) //j>hi表示右边子数组归并完成,直接复制左边子数组剩余的元素到a
                 a[k] = ax[i++];
-                //
             else if (less(ax[j], ax[i]))//对比左右子数组当前位置的最小值，右子数组当前索引元素较小取当前值，索引后移
                 a[k] = ax[j++];
             else//对比左右子数组当前位置的最小值，左子数组当前索引元素较小取当前值，索引后移
@@ -37,11 +36,11 @@ public class DownTopMergeSort {
     //排序算法
     public static void sort(Comparable[] a) {
         int n = a.length;
-
         ax = new Comparable[n];
+
         for(int sz = 1;sz<n;sz = sz+sz)//sz子数组大小
             for(int lo = 0;lo<n-sz;lo += sz+sz)//lo子数组索引
-                merge(a,lo,lo+sz-1,Math.min(lo+sz+sz-1,n-1));
+                merge(a,lo,lo+sz-1,Math.min(lo+sz+sz-1,n-1));//lo两个小数组归并后的索引位置
     }
 
 
