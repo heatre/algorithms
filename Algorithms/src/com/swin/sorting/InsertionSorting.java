@@ -36,7 +36,7 @@ public class InsertionSorting {
         return v.compareTo(w) < 0;
     }
 
-    //交换数组a中i，j两个元素的位置
+    //交换数组a中i，j两个元素的位置  ·
     private static void exch(Comparable[] a, int i, int j) {
         Comparable t = a[i];
         a[i] = a[j];
