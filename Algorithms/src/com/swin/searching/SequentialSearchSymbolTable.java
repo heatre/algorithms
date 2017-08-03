@@ -5,12 +5,13 @@ import com.swin.utils.Utils;
 import edu.princeton.cs.algs4.StdOut;
 
 /**顺序查找(Sequential search)，基于无序链表.
- * 命题：在含有N对键值的基于无序链表的符号表中，未命中查找和插入操作都需要N比较。
+ * 查找的成本模型：一般统计比较的次数，内循环不进行比较的情况下则统计数组的访问次数
+ * 命题A：在含有N对键值的基于无序链表的符号表中，未命中查找和插入操作都需要N比较。
  * 命中查找最坏情况下需要N次比较。向一个空的无序符号表中插入N个不同的键需要~N^2次比较。
- * 向一个空表中插入N个不同的键需要~N^2次比较
+ * 推论：向一个空表中插入N个不同的键需要~N^2次比较
  * Created by swin on 2017/8/3.
  */
-public class SequentialSearch<Key,Val> {
+public class SequentialSearchSymbolTable<Key,Val> {
     private Node first; //键值对节点
     private int n;//键值对数
 
@@ -31,7 +32,7 @@ public class SequentialSearch<Key,Val> {
     /**
      * 构造函数
      */
-    public SequentialSearch(){
+    public SequentialSearchSymbolTable(){
         first = null;
         n = 0;
     }
@@ -139,7 +140,7 @@ public class SequentialSearch<Key,Val> {
      */
     public static void main(String[] args){
         String [] a = Utils.getStringArray("tiny.txt");
-        SequentialSearch<String,Integer> ss = new SequentialSearch<>();
+        SequentialSearchSymbolTable<String,Integer> ss = new SequentialSearchSymbolTable<>();
         for(int i=0;i<a.length;i++){
             ss.put(a[i],i);
         }
