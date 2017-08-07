@@ -23,7 +23,7 @@ import java.util.NoSuchElementException;
  * 命题I：在一棵红黑树中，以下操作所需时间都是对数级别，get，put，getMax,getMin,floor,
  * ceiling,rank,select,deleteMin,deleteMax,delete,range
  */
-public class RedBlackTree<Key extends Comparable<Key>, Val> {
+public class RedBlackTreeST<Key extends Comparable<Key>, Val> {
     private Node root;//r-b bst根节点
     private static final boolean RED = true;
     private static final boolean BLACK = false;
@@ -50,7 +50,7 @@ public class RedBlackTree<Key extends Comparable<Key>, Val> {
     /**
      * 二叉查找树构造函数
      */
-    public RedBlackTree() {
+    public RedBlackTreeST() {
         root = null;
     }
 
@@ -645,7 +645,7 @@ public class RedBlackTree<Key extends Comparable<Key>, Val> {
      */
     public static void main(String[] args) {
         String[] a = Utils.getStringArray("tiny.txt");
-        BinarySearchTree<String, Integer> ss = new BinarySearchTree<>();
+        BinarySearchTreeST<String, Integer> ss = new BinarySearchTreeST<>();
         for (int i = 0; i < a.length; i++) {
             ss.put(a[i], i);
         }

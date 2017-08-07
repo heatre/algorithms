@@ -14,7 +14,7 @@ import java.util.NoSuchElementException;
  * 命题E:在一棵二叉查找树中，所有操作最坏情况下需要时间都和树的高度成正比
  *
  */
-public class BinarySearchTree<Key extends Comparable<Key>, Val> {
+public class BinarySearchTreeST<Key extends Comparable<Key>, Val> {
     private Node root;//bst根节点
 
     /**
@@ -37,7 +37,7 @@ public class BinarySearchTree<Key extends Comparable<Key>, Val> {
     /**
      * 二叉查找树构造函数
      */
-    public BinarySearchTree() {
+    public BinarySearchTreeST() {
         root = null;
     }
 
@@ -511,7 +511,7 @@ public class BinarySearchTree<Key extends Comparable<Key>, Val> {
      */
     public static void main(String[] args) {
         String[] a = Utils.getStringArray("tiny.txt");
-        BinarySearchTree<String, Integer> ss = new BinarySearchTree<>();
+        BinarySearchTreeST<String, Integer> ss = new BinarySearchTreeST<>();
         for (int i = 0; i < a.length; i++) {
             ss.put(a[i], i);
         }

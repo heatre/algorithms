@@ -12,7 +12,7 @@ import edu.princeton.cs.algs4.StdOut;
  * 推论：向一个空表中插入N个不同的键需要~N^2次比较
  * Created by swin on 2017/8/3.
  */
-public class SequentialSearchSymbolTable<Key, Val> {
+public class SequentialSearchST<Key, Val> {
     private Node first; //键值对节点
     private int n;//键值对数
 
@@ -34,7 +34,7 @@ public class SequentialSearchSymbolTable<Key, Val> {
     /**
      * 构造函数
      */
-    public SequentialSearchSymbolTable() {
+    public SequentialSearchST() {
         first = null;
         n = 0;
     }
@@ -151,7 +151,7 @@ public class SequentialSearchSymbolTable<Key, Val> {
      */
     public static void main(String[] args) {
         String[] a = Utils.getStringArray("tiny.txt");
-        SequentialSearchSymbolTable<String, Integer> ss = new SequentialSearchSymbolTable<>();
+        SequentialSearchST<String, Integer> ss = new SequentialSearchST<>();
         for (int i = 0; i < a.length; i++) {
             ss.put(a[i], i);
         }

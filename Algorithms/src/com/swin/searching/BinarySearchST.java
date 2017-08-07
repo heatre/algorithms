@@ -10,7 +10,7 @@ import edu.princeton.cs.algs4.StdOut;
  * 向大小为N的有序数组中插入一个新的元素最坏情况下需要访问~2N次数组，一次向一个空的
  * 符号表中插入N个元素的最欢情况下需要~N^2次数组访问
  */
-public class BinarySearchSymbolTable<Key extends Comparable<Key>, Val> {
+public class BinarySearchST<Key extends Comparable<Key>, Val> {
     private Key[] keys;//存储键数组
     private Val[] vals;//存储值数组
     private int N;    //符号表中键值对数
@@ -20,7 +20,7 @@ public class BinarySearchSymbolTable<Key extends Comparable<Key>, Val> {
      *
      * @param capacity 符号表容量
      */
-    public BinarySearchSymbolTable(int capacity) {
+    public BinarySearchST(int capacity) {
         keys = (Key[]) new Comparable[capacity];
         vals = (Val[]) new Object[capacity];
         N = 0;
@@ -331,7 +331,7 @@ public class BinarySearchSymbolTable<Key extends Comparable<Key>, Val> {
      */
     public static void main(String[] args){
         String [] a = Utils.getStringArray("tiny.txt");
-        BinarySearchSymbolTable<String,Integer> ss = new BinarySearchSymbolTable<>(100);
+        BinarySearchST<String,Integer> ss = new BinarySearchST<>(100);
         for(int i=0;i<a.length;i++){
             ss.put(a[i],i);
         }
